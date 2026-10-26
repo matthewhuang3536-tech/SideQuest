@@ -1,0 +1,222 @@
+      body: Column(
+        children: [
+          Container(alignment: Alignment.center, child: const Text('Home Screen')),
+          Row(
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) =>  Home()),
+                  );
+                },
+                child: const Text('Home'), //Icon put here!!
+              ),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const Groups()),
+                  );
+                },
+                child: const Text('Groups'), //Icon put here!!
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const Quests()),
+                  );
+                },
+                child: const Text('Quests'), //Icon put here!!
+              ),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const Profile()),
+                  );
+                },
+                child: const Text('Profile'), //Icon put here!!
+              ),
+            ],
+          ),
+        ],
+      ),
+    ));
+    
+  }
+}
+
+class Groups extends StatelessWidget {
+  const Groups({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(backgroundColor: blue, title: const Text('Groups')),
+      body: Column(
+        children: [
+          Row(
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) =>  Home()),
+                  );
+                },
+                child: const Text('Home'), //Icon put here!!
+              ),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const Groups()),
+                  );
+                },
+                child: const Text('Groups'), //Icon put here!!
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const Quests()),
+                  );
+                },
+                child: const Text('Quests'), //Icon put here!!
+              ),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const Profile()),
+                  );
+                },
+                child: const Text('Profile'), //Icon put here!!
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Quests extends StatelessWidget {
+  const Quests({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(backgroundColor: blue, title: const Text('Quests')),
+      body: Column(
+        children: [
+          Row(
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) =>  Home()),
+                  );
+                },
+                child: const Text('Home'), //Icon put here!!
+              ),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const Groups()),
+                  );
+                },
+                child: const Text('Groups'), //Icon put here!!
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const Quests()),
+                  );
+                },
+                child: const Text('Quests'), //Icon put here!!
+              ),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const Profile()),
+                  );
+                },
+                child: const Text('Profile'), //Icon put here!!
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Profile extends StatelessWidget {
+  const Profile({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(backgroundColor: blue, title: const Text('Profile')),
+      body: Column(
+        children: [
+          Row(
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) =>  Home()),
+                  );
+                },
+                child: const Text('Home'), //Icon put here!!
+              ),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const Groups()),
+                  );
+                },
+                child: const Text('Groups'), //Icon put here!!
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const Quests()),
+                  );
+                },
+                child: const Text('Quests'), //Icon put here!!
+              ),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const Profile()),
+                  );
+                },
+                child: const Text('Profile'), //Icon put here!!
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}

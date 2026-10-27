@@ -298,7 +298,7 @@ final List<Map<String, String>> daily2026quests = [
     {"title":"Five-second challenge","description":"Name three things in a category within five seconds."},
     {"title":"Mystery sound","description":"Make a sound using an everyday object and let the other person guess it."},
     {"title":"Play chess with somebody","description":"Play a game of chess with someone!"},
-    {"title":"Spot the difference","description":"Arrange a few objects, change one detail, and let your friend spot it."},
+    {"title":"Record a video!","description":"Record a fun video about your Congressional App Challenge project!"},
     {"title":"Invent a scoring system","description":"Make up a funny scoring system for a simple game."},
     {"title":"Mini puzzle race","description":"Solve the same small puzzle and compare your approaches."},
     {"title":"Emoji guessing game","description":"Describe a movie or phrase using emojis for your friend to guess."},
@@ -840,8 +840,8 @@ final List<Map<String, String>> monthly2026quests = [
     "description": "Volunteer for at least six hours this month with a community organization or organize a small service project that produces a tangible benefit for others."
   },
   {
-    "title": "Complete a Physical Challenge",
-    "description": "Choose a safe, personally challenging fitness goal. Follow a structured training plan for at least three weeks and complete a final challenge appropriate for your current ability."
+    "title": "Go On an Adventure",
+    "description": "Visit a place you have never been before, such as a different city, park, or country. Try to meet as many new people as you can!"
   },
   {
     "title": "Create Something Every Week",

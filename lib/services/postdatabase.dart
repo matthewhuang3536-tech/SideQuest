@@ -7,17 +7,23 @@ class PostsService {
   final String caption;
   final String uid;
   final String? username;
-
+  final String pfp;
   PostsService({ 
     required this.url,
     required this.caption,
     required this.uid,
+    required this.pfp,
     this.username,
   });
 
   //collection reference
   final CollectionReference postInfo = FirebaseFirestore.instance.collection("posts");
   final CollectionReference userInfo = FirebaseFirestore.instance.collection("users");
+
+
+
+
+
 
   Future newPost() async {
   List<Function> quests = [getTaskDaily,getTaskWeekly,getTaskMonthly];
@@ -33,6 +39,7 @@ class PostsService {
       "datecreated" : date,
       "image" : url,
       "caption" : caption,
+      "pfp" : pfp,
       });
     await FirebaseFirestore.instance.collection('users').doc(uid).collection("connections").add({
       "connections" : caption.split("@").sublist(1),

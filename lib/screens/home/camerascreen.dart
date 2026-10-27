@@ -40,7 +40,7 @@ class _PostState extends State<Post> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: blue,
-        title :Text("take a photo!")
+        title :Text("Take a photo!")
       ),
       body: Column(
         children: [

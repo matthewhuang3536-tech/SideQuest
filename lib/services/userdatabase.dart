@@ -16,6 +16,7 @@ class DatabaseService {
       "username" : username,
       "email" : email,
       "password" : password,
+      "pfp" : "https://firebasestorage.googleapis.com/v0/b/second-2177e.firebasestorage.app/o/Portrait_Placeholder.png?alt=media&token=533c3475-cf51-40c4-8d0f-ea6990ceaaef"
       });
   }
   //stream of changes

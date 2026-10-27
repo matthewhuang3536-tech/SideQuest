@@ -30,63 +30,65 @@ class _SignInState extends State<SignIn> {
         actions:<Widget>[
           TextButton.icon(
             icon: Icon(Icons.person),
-            label: Text("register"),
+            label: Text("Register"),
             onPressed : () {
               widget.toggleView();
             }
           )
         ]
       ),
-      body:Container(
-        padding: EdgeInsets.symmetric(vertical: 20, horizontal:50),
-        child:Form(
-          key:_formKey,
-          child: Column(
-            children: [
-              SizedBox(height:20),
-              TextFormField(
-                decoration: textInputDecoration.copyWith(hintText:"Email"),
-                validator: (val) => val!.isEmpty ? "enter an email" : null,
-                onChanged: (val) {
-                  setState(() => email = val);
-                }
-              ),
-              SizedBox(height:20),
-              TextFormField(
-                decoration: textInputDecoration.copyWith(hintText:"Password"),
-                obscureText: true,
-                validator: (val) => val!.length < 6 ? "pass must be 6+ chars" : null,
-                onChanged: (val) {
-                  setState(() => password = val);
-                }
-              ),
-              SizedBox(height:20),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.pink,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5),
-                  )
-                  ),
-                child: Text("Sign in",
-                style: TextStyle(color:Colors.white),
-                ),
-                onPressed: () async {
-                  if (_formKey.currentState!.validate()) {
-                    dynamic result = await _auth.signInWithEmailAndPassword(email, password);
-                      if(result == null) {
-                        setState(() => error = "wrong email/password");
-                    }
+      body:SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.symmetric(vertical: 20, horizontal:50),
+          child:Form(
+            key:_formKey,
+            child: Column(
+              children: [
+                SizedBox(height:20),
+                TextFormField(
+                  decoration: textInputDecoration.copyWith(hintText:"Email"),
+                  validator: (val) => val!.isEmpty ? "enter an email" : null,
+                  onChanged: (val) {
+                    setState(() => email = val);
                   }
-                },
                 ),
-                SizedBox(height:12.0),
-                Text(
-                  error,
-                  style: TextStyle(color: Colors.red, fontSize:14)),
-              ]
-            )
-        )
+                SizedBox(height:20),
+                TextFormField(
+                  decoration: textInputDecoration.copyWith(hintText:"Password"),
+                  obscureText: true,
+                  validator: (val) => val!.length < 6 ? "pass must be 6+ chars" : null,
+                  onChanged: (val) {
+                    setState(() => password = val);
+                  }
+                ),
+                SizedBox(height:20),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.pink,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    )
+                    ),
+                  child: Text("Sign in",
+                  style: TextStyle(color:Colors.white),
+                  ),
+                  onPressed: () async {
+                    if (_formKey.currentState!.validate()) {
+                      dynamic result = await _auth.signInWithEmailAndPassword(email, password);
+                        if(result == null) {
+                          setState(() => error = "wrong email/password");
+                      }
+                    }
+                  },
+                  ),
+                  SizedBox(height:12.0),
+                  Text(
+                    error,
+                    style: TextStyle(color: Colors.red, fontSize:14)),
+                ]
+              )
+          )
+        ),
       )
     );
   }

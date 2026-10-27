@@ -31,7 +31,7 @@ class _RegisterState extends State<Register> {
         actions:<Widget>[
           TextButton.icon(
             icon: Icon(Icons.person),
-            label: Text("sign in"),
+            label: Text("Sign In"),
             onPressed : () {
               widget.toggleView();
             }
@@ -39,62 +39,64 @@ class _RegisterState extends State<Register> {
         ]
       ),
       body:Container(
-        padding: EdgeInsets.symmetric(vertical: 20, horizontal:50),
-        child:Form(
-          key: _formKey,
-          child: Column(
-            children: [
-              SizedBox(height:20),
-              TextFormField(
-                decoration: textInputDecoration.copyWith(hintText:"Email"),
-                validator: (val) => val!.isEmpty ? "Enter an Email" : null,
-                onChanged: (val) {
-                  setState(() => email = val);
-                }
-              ),
-              SizedBox(height:20),
-              TextFormField(
-                decoration: textInputDecoration.copyWith(hintText:"Password"),
-                obscureText: true,
-                validator: (val) => val!.length < 6 ? "Enter a password 6+ chars long" : null,
-                onChanged: (val) {
-                  setState(() => password = val);
-                }
-              ),
-              SizedBox(height:20),
-                            TextFormField(
-                decoration: textInputDecoration.copyWith(hintText:"Username"),
-                onChanged: (val) {
-                  setState(() => username = val); // deal with repeating usernames
-                },
-                validator: (val) => val!.length > 10? "Username must be less than 10 chars" : null,
-              ),
-              SizedBox(height:20),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.pink,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5),
-                  )
-                  ),
-                child: Text("Register",
-                style: TextStyle(color:Colors.white),
-                ),
-                onPressed: () async {
-                  if (_formKey.currentState!.validate()) {
-                    dynamic result = await _auth.registerWithEmailAndPassword(email, password, username);
-                    if(result == null) {
-                      setState(() => error = "please supply a valid email");
-                    }
+        padding: EdgeInsets.symmetric(vertical: 20, horizontal:20),
+        child:SingleChildScrollView(
+          child: Form(
+            key: _formKey,
+            child: Column(
+              children: [
+                SizedBox(height:20),
+                TextFormField(
+                  decoration: textInputDecoration.copyWith(hintText:"Email"),
+                  validator: (val) => val!.isEmpty ? "Enter an Email" : null,
+                  onChanged: (val) {
+                    setState(() => email = val);
                   }
-                },
                 ),
-                SizedBox(height:12.0),
-                Text(
-                  error,
-                  style: TextStyle(color: Colors.red, fontSize:14)),
-              ]
-            )
+                SizedBox(height:20),
+                TextFormField(
+                  decoration: textInputDecoration.copyWith(hintText:"Password"),
+                  obscureText: true,
+                  validator: (val) => val!.length < 6 ? "Enter a password 6+ chars long" : null,
+                  onChanged: (val) {
+                    setState(() => password = val);
+                  }
+                ),
+                SizedBox(height:20),
+                              TextFormField(
+                  decoration: textInputDecoration.copyWith(hintText:"Username"),
+                  onChanged: (val) {
+                    setState(() => username = val); // deal with repeating usernames
+                  },
+                  validator: (val) => val!.length > 10? "Username must be less than 10 chars" : null,
+                ),
+                SizedBox(height:20),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.pink,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    )
+                    ),
+                  child: Text("Register",
+                  style: TextStyle(color:Colors.white),
+                  ),
+                  onPressed: () async {
+                    if (_formKey.currentState!.validate()) {
+                      dynamic result = await _auth.registerWithEmailAndPassword(email, password, username);
+                      if(result == null) {
+                        setState(() => error = "please supply a valid email");
+                      }
+                    }
+                  },
+                  ),
+                  SizedBox(height:12.0),
+                  Text(
+                    error,
+                    style: TextStyle(color: Colors.red, fontSize:14)),
+                ]
+              )
+          ),
         )
       )
     );

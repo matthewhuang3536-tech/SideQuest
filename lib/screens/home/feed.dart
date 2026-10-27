@@ -54,10 +54,8 @@ class Feed extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             ListTile(
-                              leading: const CircleAvatar(
-                                child: Icon(
-                                  Icons.person,
-                                ), // choose to add profile pics or remove this
+                              leading: CircleAvatar(
+                                backgroundImage: NetworkImage(post['pfp'] ?? ''), 
                               ),
                               title: Text(post['username'] ?? 'User'),
                             ),

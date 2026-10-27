@@ -57,11 +57,9 @@ class Connections extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             ListTile(
-                              leading: const CircleAvatar(
-                                child: Icon(
-                                  Icons.person,
+                              leading:  CircleAvatar(
+                                backgroundImage: NetworkImage(post['pfp'] ?? ''), 
                                 ), // choose to add profile pics or remove this
-                              ),
                               title: Text(post['username'] ?? 'User'),
                             ),
 
